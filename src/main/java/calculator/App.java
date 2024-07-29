@@ -5,13 +5,11 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
-       /* int count =0; // 인덱스값
-        int[] array = new int[10]; // 배열 선언 및 생성*/
-        ArrayList<Integer> array = new ArrayList<>();
 
-
+        Calculator cal = new Calculator();
 
         Scanner sc = new Scanner(System.in);
+
         while (true) {
             System.out.print("첫 번째 숫자를 입력하세요: ");
             // Scanner를 사용하여 양의 정수를 입력받고 적합한 타입의 변수에 저장합니다.
@@ -24,44 +22,35 @@ public class App {
             char operator = sc.next().charAt(0); // charAt(0) : 입력받는값을 char로 변환해준다.
             //원래 scanner는 String으로 받아줘야된다.
             // charAt('인덱스값')
-            int result = 0;
 
-            if (operator == '+') {
-                result = num1 + num2;
-            } else if (operator == '-') {
-                result = num1 - num2;
-            } else if (operator == '*') {
-                result = num1 * num2;
-            } else if (operator == '/') {
-                if (num2 == 0) {
-                    System.out.println("0으로 나눌수 없습니다.");
-                } else {
-                    result = num1 / num2;
-                }
-            }
+            int result =0;
+
+            result = cal.calculate(num1, num2, operator);
+
+            cal.array.add(result);
+
             System.out.println(num1 + " " + operator + " " + num2 + " = " + result);
 
-            array.add(result);
 
-            /*System.out.println("array = " + array);// 배열 확인용 출력*/
 
 
             System.out.println("가장 먼저 저장된 연산 결과를 삭제하시겠습니까?(remove 입력)");
             sc.nextLine();
             String text2 = sc.nextLine();
             if(text2.equals("remove")) {
-                array.remove(0);
+                cal.array.remove(0);
             }
 
             System.out.println("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회)");
             //sc.nextLine();
             String text3 = sc.nextLine();
             if(text3.equals("inquiry")){// 출력해주기
-                for (int i : array) {
+                for (int i : cal.array) {
                     System.out.print(i);
                 }
 
             }
+
             System.out.println("");
 
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
@@ -70,14 +59,7 @@ public class App {
 
             if (text.equals("exit")){ // exit 치면 빠져나가고 아님 계속 무한 계산하게
                 break;
-            }else{
-                //count +=1; // 인덱스값 증가시켜줌
-                /*if(count==10){ // count값이 10이 되면 젤 앞에 수를 지워주고 한칸씩 앞으로 옮겨준다.
-                    for(int i=1;i<10;i++){
-                        array[i-1]=array[i];
-                    }
-                    count -=1;// count값을 다시 9로 낮춰준다.*/
-                }
+            }
             }
 
 
