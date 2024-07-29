@@ -1,11 +1,15 @@
 package calculator;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
-        int count =0; // 인덱스값
-        int[] array = new int[10]; // 배열 선언 및 생성
+       /* int count =0; // 인덱스값
+        int[] array = new int[10]; // 배열 선언 및 생성*/
+        ArrayList<Integer> array = new ArrayList<>();
+
+
 
         Scanner sc = new Scanner(System.in);
         while (true) {
@@ -36,30 +40,34 @@ public class App {
                 }
             }
             System.out.println(num1 + " " + operator + " " + num2 + " = " + result);
-            array[count] = result; // 결과값이 0번부터 저장되도록
-            for(int i=0;i<=count;i++){
-                System.out.print(array[i]);
+
+            array.add(result);
+
+            /*System.out.println("array = " + array);// 배열 확인용 출력*/
+
+            System.out.println("가장 먼저 저장된 연산 결과를 삭제하시겠습니까?(remove 입력)");
+            sc.nextLine();
+            String text2 = sc.nextLine();
+            if(text2.equals("remove")) {
+                array.remove(0);
             }
 
-
-
-            System.out.print("더 계산하시겠습니까? (exit 입력 시 종료)");
-            sc.nextLine(); // 자꾸 넘어가서 개행문자를 받아줌
+            System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
+            //sc.nextLine(); // 자꾸 넘어가서 개행문자를 받아줌
             String text = sc.nextLine();
 
             if (text.equals("exit")){ // exit 치면 빠져나가고 아님 계속 무한 계산하게
                 break;
             }else{
-                count +=1; // 인덱스값 증가시켜줌
-                if(count==10){ // count값이 10이 되면 젤 앞에 수를 지워주고 한칸씩 앞으로 옮겨준다.
+                //count +=1; // 인덱스값 증가시켜줌
+                /*if(count==10){ // count값이 10이 되면 젤 앞에 수를 지워주고 한칸씩 앞으로 옮겨준다.
                     for(int i=1;i<10;i++){
                         array[i-1]=array[i];
                     }
-                    count -=1;// count값을 다시 9로 낮춰준다.
+                    count -=1;// count값을 다시 9로 낮춰준다.*/
                 }
             }
 
 
         }
     }
-}
