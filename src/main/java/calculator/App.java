@@ -37,6 +37,9 @@ public class App {
             }
             System.out.println(num1 + " " + operator + " " + num2 + " = " + result);
             array[count] = result; // 결과값이 0번부터 저장되도록
+            for(int i=0;i<=count;i++){
+                System.out.print(array[i]);
+            }
 
 
 
@@ -48,6 +51,12 @@ public class App {
                 break;
             }else{
                 count +=1; // 인덱스값 증가시켜줌
+                if(count==10){ // count값이 10이 되면 젤 앞에 수를 지워주고 한칸씩 앞으로 옮겨준다.
+                    for(int i=1;i<10;i++){
+                        array[i-1]=array[i];
+                    }
+                    count -=1;// count값을 다시 9로 낮춰준다.
+                }
             }
 
 
