@@ -4,7 +4,8 @@ import java.util.ArrayList;
 
 public class Calculator {
 
-    public ArrayList<Integer> array = new ArrayList<>();
+    private ArrayList<Integer> array = new ArrayList<>(); // private을 써서 외부에서 접근못하게
+
 
 
     public int calculate(int n1, int n2, char op){
@@ -30,9 +31,18 @@ public class Calculator {
             System.out.println("매개변수를 잘못 입력하였습니다.");
         }
         return result;
-
     }
-
-
-
+    public ArrayList<Integer> getArray(){ // getter 설정
+        return array;
+    }
+    public void setArray(ArrayList<Integer> array){ //setter 설정
+        this.array=array;
+    }
 }
+
+
+
+
+
+
+

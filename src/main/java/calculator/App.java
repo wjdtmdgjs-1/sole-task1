@@ -10,6 +10,7 @@ public class App {
 
         Scanner sc = new Scanner(System.in);
 
+
         while (true) {
             System.out.print("첫 번째 숫자를 입력하세요: ");
             // Scanner를 사용하여 양의 정수를 입력받고 적합한 타입의 변수에 저장합니다.
@@ -25,9 +26,12 @@ public class App {
 
             int result =0;
 
+
             result = cal.calculate(num1, num2, operator);
 
-            cal.array.add(result);
+            cal.getArray().add(result); /* getter로 받아주기. setter로 받을 수 있으나 지금 배열 전체를 바꾸는것이 아니라
+            하나를 추가하거나 제거하는 것이기 때문에 getter 로 받아서 하는것. setter로 받을 경우 4번째 값을 넣어줄때 앞에 3개의
+            값들을 모두 넣어 새로운 배열을 만들어야 되기에 이경우 getter로 사용한다.*/
 
             System.out.println(num1 + " " + operator + " " + num2 + " = " + result);
 
@@ -38,14 +42,14 @@ public class App {
             sc.nextLine();
             String text2 = sc.nextLine();
             if(text2.equals("remove")) {
-                cal.array.remove(0);
+                cal.getArray().remove(0);
             }
 
             System.out.println("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회)");
             //sc.nextLine();
             String text3 = sc.nextLine();
             if(text3.equals("inquiry")){// 출력해주기
-                for (int i : cal.array) {
+                for (int i : cal.getArray()) {
                     System.out.print(i);
                 }
 
