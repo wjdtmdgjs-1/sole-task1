@@ -4,6 +4,9 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
+        int count =0; // 인덱스값
+        int[] array = new int[10]; // 배열 선언 및 생성
+
         Scanner sc = new Scanner(System.in);
         while (true) {
             System.out.print("첫 번째 숫자를 입력하세요: ");
@@ -33,6 +36,9 @@ public class App {
                 }
             }
             System.out.println(num1 + " " + operator + " " + num2 + " = " + result);
+            array[count] = result; // 결과값이 0번부터 저장되도록
+
+
 
             System.out.print("더 계산하시겠습니까? (exit 입력 시 종료)");
             sc.nextLine(); // 자꾸 넘어가서 개행문자를 받아줌
@@ -40,7 +46,10 @@ public class App {
 
             if (text.equals("exit")){ // exit 치면 빠져나가고 아님 계속 무한 계산하게
                 break;
+            }else{
+                count +=1; // 인덱스값 증가시켜줌
             }
+
 
         }
     }
