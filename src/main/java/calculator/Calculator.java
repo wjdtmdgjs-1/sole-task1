@@ -38,6 +38,9 @@ public class Calculator {
     public void setArray(ArrayList<Integer> array){ //setter 설정
         this.array=array;
     }
+    public void removeResult(){ // 가장 먼저 저장된 데이터를 삭제하는 기능을 가진 메서드 구현
+        array.remove(0);
+    }
 }
 
 
