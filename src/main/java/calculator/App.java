@@ -45,12 +45,24 @@ public class App {
 
             /*System.out.println("array = " + array);// 배열 확인용 출력*/
 
+
             System.out.println("가장 먼저 저장된 연산 결과를 삭제하시겠습니까?(remove 입력)");
             sc.nextLine();
             String text2 = sc.nextLine();
             if(text2.equals("remove")) {
                 array.remove(0);
             }
+
+            System.out.println("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회)");
+            //sc.nextLine();
+            String text3 = sc.nextLine();
+            if(text3.equals("inquiry")){// 출력해주기
+                for (int i : array) {
+                    System.out.print(i);
+                }
+
+            }
+            System.out.println("");
 
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
             //sc.nextLine(); // 자꾸 넘어가서 개행문자를 받아줌
