@@ -41,18 +41,15 @@ public class App {
             System.out.println("가장 먼저 저장된 연산 결과를 삭제하시겠습니까?(remove 입력)");
             sc.nextLine();
             String text2 = sc.nextLine();
-            if(text2.equals("remove")) {
-                cal.getArray().remove(0);
+            if(text2.equals("remove")) {// method 사용할 수 있게 바꿔줌
+                cal.removeResult();
             }
 
             System.out.println("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회)");
             //sc.nextLine();
             String text3 = sc.nextLine();
-            if(text3.equals("inquiry")){// 출력해주기
-                for (int i : cal.getArray()) {
-                    System.out.print(i);
-                }
-
+            if(text3.equals("inquiry")){// method 사용할 수 있게 바꿔줌
+               cal.inquiryResults();
             }
 
             System.out.println("");

@@ -41,6 +41,13 @@ public class Calculator {
     public void removeResult(){ // 가장 먼저 저장된 데이터를 삭제하는 기능을 가진 메서드 구현
         array.remove(0);
     }
+    public void inquiryResults(){
+        System.out.print("[");
+        for (int i : array) {
+            System.out.print(i+" ");
+        }
+        System.out.print("]");
+    }
 }
 
 
