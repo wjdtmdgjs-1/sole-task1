@@ -21,7 +21,7 @@ public class Calculator {
     SubtractOperator sub = new SubtractOperator();
     MultiplyOperator mul = new MultiplyOperator();
     DivideOperator div = new DivideOperator();
-
+    ModOperator mod = new ModOperator();
     public double calculate(int n1, int n2, char op){
 
        double result = 0;
@@ -40,6 +40,7 @@ public class Calculator {
                 System.out.println("0으로 나눌수 없습니다.");
             } else {
                 result = (double)div.operate(n1,n2);
+                System.out.println("나머지는 " + mod.operate(n1,n2) + "입니다.");
 
             }
         }else{
