@@ -4,9 +4,11 @@ import java.util.ArrayList;
 
 public class Calculator {
 
-    private ArrayList<Integer> array = new ArrayList<>(); // private을 써서 외부에서 접근못하게
+    private ArrayList<Integer> array;// private을 써서 외부에서 접근못하게
 
-
+    public Calculator(ArrayList<Integer> array){
+        this.array = array;
+    }
 
     public int calculate(int n1, int n2, char op){
        int result = 0;
@@ -49,7 +51,6 @@ public class Calculator {
         System.out.print("]");
     }
 }
-
 
 
 

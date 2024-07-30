@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) {
 
-        Calculator cal = new Calculator();
+        Calculator cal = new Calculator(new ArrayList<>()); // 생성자를 이용해  초기화
 
         Scanner sc = new Scanner(System.in);
 
@@ -36,8 +36,6 @@ public class App {
             System.out.println(num1 + " " + operator + " " + num2 + " = " + result);
 
 
-
-
             System.out.println("가장 먼저 저장된 연산 결과를 삭제하시겠습니까?(remove 입력)");
             sc.nextLine();
             String text2 = sc.nextLine();
@@ -61,8 +59,9 @@ public class App {
             if (text.equals("exit")){ // exit 치면 빠져나가고 아님 계속 무한 계산하게
                 break;
             }
-            }
-
 
         }
+
+
     }
+}
