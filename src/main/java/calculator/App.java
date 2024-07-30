@@ -7,11 +7,34 @@ public class App {
     public static void main(String[] args) {
 
         Calculator cal = new Calculator(new ArrayList<>()); // 생성자를 이용해  초기화
+        Calculator cal2 = new Calculator(new ArrayList<>()); // 생성자를 이용해  초기화
+
 
         Scanner sc = new Scanner(System.in);
 
 
         while (true) {
+            System.out.println("선택 (원의넓이 : O, 사칙연산 : x)"); // 원의 넒이 구할지 사칙연산할지 고르기.
+            char pick = sc.next().charAt(0);
+            if (pick == 'O'){
+                System.out.println("원의 반지름을 입력하세요");
+                int rad = sc.nextInt();
+                double result=0;
+                result = cal2.calculateCircleArea(rad);
+                cal2.getArray().add(result); //결과값 저장
+                System.out.println("원의 넓이 =" + result);
+                cal2.inquiryResults(); // 저장된 넓이값들 바로 출력
+
+                sc.nextLine();
+                System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
+                sc.nextLine();
+                String text = sc.nextLine();
+
+                    if (text.equals("exit")){ // exit 치면 빠져나가고 아님 계속 무한 계산하게
+                        break;
+                    }
+
+            }else if(pick == 'X'){
             System.out.print("첫 번째 숫자를 입력하세요: ");
             // Scanner를 사용하여 양의 정수를 입력받고 적합한 타입의 변수에 저장합니다.
             int num1 = sc.nextInt();
@@ -24,7 +47,7 @@ public class App {
             //원래 scanner는 String으로 받아줘야된다.
             // charAt('인덱스값')
 
-            int result =0;
+            double result =0; // double로 변경해준다.
 
 
             result = cal.calculate(num1, num2, operator);
@@ -58,6 +81,10 @@ public class App {
 
             if (text.equals("exit")){ // exit 치면 빠져나가고 아님 계속 무한 계산하게
                 break;
+            }
+            }else{
+                System.out.println("다시 입력해주세요");
+
             }
 
         }

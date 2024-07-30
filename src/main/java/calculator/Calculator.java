@@ -4,11 +4,19 @@ import java.util.ArrayList;
 
 public class Calculator {
 
-    private ArrayList<Integer> array;// private을 써서 외부에서 접근못하게
+    static final double PI = 3.141592; // PI값은 변하지않으니 static final 사용
+    private ArrayList<Double> array;// private을 써서 외부에서 접근못하게
 
-    public Calculator(ArrayList<Integer> array){
+
+    public Calculator(ArrayList<Double> array){
         this.array = array;
     }
+    public double calculateCircleArea(int r1){
+        double result=0;
+        result = r1*r1*PI;
+        return  result;
+    }
+
 
     public int calculate(int n1, int n2, char op){
        int result = 0;
@@ -34,10 +42,10 @@ public class Calculator {
         }
         return result;
     }
-    public ArrayList<Integer> getArray(){ // getter 설정
+    public ArrayList<Double> getArray(){ // getter 설정
         return array;
     }
-    public void setArray(ArrayList<Integer> array){ //setter 설정
+    public void setArray(ArrayList<Double> array){ //setter 설정
         this.array=array;
     }
     public void removeResult(){ // 가장 먼저 저장된 데이터를 삭제하는 기능을 가진 메서드 구현
@@ -45,7 +53,7 @@ public class Calculator {
     }
     public void inquiryResults(){
         System.out.print("[");
-        for (int i : array) {
+        for (double i : array) {
             System.out.print(i+" ");
         }
         System.out.print("]");
