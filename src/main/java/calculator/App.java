@@ -6,8 +6,8 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) {
 
-        Calculator cal = new Calculator(new ArrayList<>()); // 생성자를 이용해  초기화
-        Calculator cal2 = new Calculator(new ArrayList<>()); // 생성자를 이용해  초기화
+        ArithmeticCalculator cal = new ArithmeticCalculator(new ArrayList<>()); // 생성자를 이용해  초기화
+        CircleCalculator cal2 = new CircleCalculator(new ArrayList<>()); // 생성자를 이용해  초기화
 
 
         Scanner sc = new Scanner(System.in);
